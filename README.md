@@ -8,18 +8,18 @@ I collected and inputted all the data for this project manually into excel, whic
 
 ## Equations:
 Elo vs opponent:
-![](Readme/vprime.PNG)
+![](readme_images/vprime.PNG)
 
 Elo vs median:
-![](Readme/mprime.PNG)
+![](readme_images/mprime.PNG)
 
 Manager Rating:
-![](Readme/mrr.png.png)
+![](readme_images/mrr.png.png)
 
 The original equation that I started with equally weighs Elo for the performance vs opponent and performance vs median (above), so the formula was just the basic average of the two ratings(α=0.5). I decided to write the equation in a more general form with α being the determining factor for the weight. I believe the optimal α will be between 0.15 and 0.35, which would mean performance vs median is much more indicative of success than performance vs opponent.  
 
 Mean Regression Rate:
-![](Readme/mrr.PNG)
+![](readme_images/mrr.PNG)
 
 In this equation, β is a value between 0 and 1 that regresses each rating to the mean at the beginning of each season. I got this idea from FiveThirtyEight’s NFL game predictions.
 
