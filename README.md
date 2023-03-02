@@ -25,7 +25,7 @@ In this equation, β is a value between 0 and 1 that regresses each rating to th
 
 https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/
 
-The NFL model has a mean regression rate of 1/3, fantasy football is much more volatile because each team is completely wiped out each after each season. Thus, I believe the optimal β value will be somewhere between 0.5 and .75.
+The NFL model has a mean regression rate of 1/3, but fantasy football is much more volatile because each team is completely wiped out each after each season. Thus, I believe the optimal β value will be somewhere between 0.5 and .75.
 
 ## Results:
 
