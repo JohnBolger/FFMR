@@ -37,7 +37,7 @@ The score column is simply Accuracy + 2022 Accuracy.
 
 Here is a scatterplot showing the combinations of alpha and beta using color to show score:
 
-![](readme_images/alphabeta_scatter.PNG)
+![](readme_images/alphabeta_scatter.png)
 
 This plot provided a clear range for the optimal parameters. Alpha should be somewhere in the range (0.4,0.6) and Beta should be mewhere in the range (0.1,0.2). Also this shows that changes in Beta impact score more than changes in Alpha.
 
@@ -45,13 +45,13 @@ I then used scipy's curve fit function to find more precise values for the opima
 
 This worked really well for Alpha:
 
-![](readme_images/alpha_plot.PNG)
+![](readme_images/alpha_plot.png)
 
 Alpha = .5538
 
 Not so much for Beta:
 
-![](readme_images/beta_plot.PNG)
+![](readme_images/beta_plot.png)
 
 I couldn't find a curve that was a good fit for the data, but I knew I wanted to investigate the peak between Beta = .5 and Beta .15. So, I decided to run a loop with Alpha = .5538 and Beta in (.05,.15) incrementing by .01:
 
