@@ -27,6 +27,30 @@ https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/
 
 The NFL model has a mean regression rate of 1/3, but fantasy football is much more volatile because each team is completely wiped out each after each season. Thus, I believe the optimal β value will be somewhere between 0.5 and .75.
 
+## Optimization:
+
+I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes.
+![](readme_images/alphabeta_table.PNG)
+The score column is simply Accuracy + 2022 Accuracy.
+
+Here is a scatterplot showing the combinations of alpha and beta using color to show score:
+![](readme_images/alphabeta_scatter.PNG)
+
+This plot provided a clear range for the optimal parameters. Alpha should be somewhere in the range (0.4,0.6) and Beta should be mewhere in the range (0.1,0.2). Also this shows that changes in Beta impact score more than changes in Alpha.
+
+I then used scipy's curve fit function to find more precise values for the opimal Alpha and Beta.
+
+This worked really well for Alpha:
+![](readme_images/alpha_plot.PNG)
+Alpha = .5538
+
+Not so much for Beta:
+![](readme_images/beta_plot.PNG)
+I couldn't find a curve that was a good fit for the data, but I knew I wanted to investigate the peak between Beta = .5 and Beta .15. So, I decided to run a loop with Alpha = .5538 and Beta in (.05,.15) incrementing by .01:
+![](readme_images/beta_opt.PNG)
+![](readme_images/beta_opt2.PNG)
+Hence, I chose Beta = .12
+
 ## Results:
 
  
