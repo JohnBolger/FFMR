@@ -52,7 +52,10 @@ I couldn't find a curve that was a good fit for the data, but I knew I wanted to
 Hence, I chose Beta = .12
 
 ## Results:
-
+For Alpha = .5538, Beta = .12
+Is 59% good?
+2019 is so bad because 2 new teams were added to the league, which adds 2 fresh ratings and changes the dynamic of the league
+There doesn't appear to be too much of a patern in the weeks analysis, though the playoff weeks look pretty good.
  
 ## Conclusion:
 
