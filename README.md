@@ -38,6 +38,7 @@ The score column is simply Accuracy + 2022 Accuracy.
 Here is a scatterplot showing the combinations of alpha and beta using color to show score:
 
 ![](readme_images/alphabeta_scatter.png)
+![](readme_images/alphabeta_scatter1.png)
 
 This plot provided a clear range for the optimal parameters. Alpha should be somewhere in the range (0.4,0.6) and Beta should be mewhere in the range (0.1,0.2). Also this shows that changes in Beta impact score more than changes in Alpha.
 
