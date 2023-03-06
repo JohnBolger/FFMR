@@ -31,7 +31,7 @@ The NFL model has a mean regression rate of 1/3, but fantasy football is much mo
 
 I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes.
 
-![The score column is simply Accuracy + 2022 Accuracy.](readme_images/alphabeta_table.PNG)
+![](readme_images/alphabeta_table.PNG)
 
 The score column is simply Accuracy + 2022 Accuracy.
 
