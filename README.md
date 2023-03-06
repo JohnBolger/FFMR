@@ -61,7 +61,7 @@ I couldn't find a curve that was a good fit for the data, but I knew I wanted to
 Hence, I chose Beta = .12
 
 ## Results:
-The percentage of corrected predicted games by the rating system:
+The percentage of correctly predicted games by the rating system:
 ![](readme_images/opt_pred_perc.PNG)
 
 By Year:
