@@ -63,15 +63,15 @@ Hence, I chose Beta = .12
 ## Results:
 For Alpha = .5538, Beta = .12:
 
-![](readme_images/opt_pred_perc.png)
+![](readme_images/opt_pred_perc.PNG)
 
 By Year:
 
-![](readme_images/perc_by_year.png)
+![](readme_images/perc_by_year.PNG)
 
 By Week:
 
-![](readme_images/perc_by_week.png)
+![](readme_images/perc_by_week.PNG)
 
  
 ## Conclusion:
