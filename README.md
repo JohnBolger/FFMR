@@ -61,8 +61,7 @@ I couldn't find a curve that was a good fit for the data, but I knew I wanted to
 Hence, I chose Beta = .12
 
 ## Results:
-For Alpha = .5538, Beta = .12:
-
+The percentage of corrected predicted games by the rating system:
 ![](readme_images/opt_pred_perc.PNG)
 
 By Year:
