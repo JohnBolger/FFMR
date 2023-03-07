@@ -4,9 +4,12 @@
 I’ve noticed, in my years of competing in fantasy football, that the same handful of managers tend to be at the top of the league every year. Although luck certainly plays its part in the outcomes of matchups, in my observation, success in fantasy football is highly correlated with the skill of the manager. And the US agrees with this observation; fantasy football has been legal in the country due to skill component even when sports betting was overwhelmingly illegal. The equation I came up with attempts to mitigate one specific factor of luck in fantasy football by weighing both performance vs opponent and performance vs median score of the league participants in that week. Opponent performance is something a manager has no control over, so taking performance vs median into account is a crucial part of my equation. It would be difficult to argue that a manager who consistently scores below the median and takes advantage of an easy schedule is somehow better than a manager that consistently scores above the median and is burdened with tough matchups. As for the importance of performance vs opponent, I have another example. Take, for instance, a manager who knows they are projected to lose their matchup. This manager will likely start a more volatile option who has the potential to “boom” than a consistent option who doesn’t have a “boom” in their range of outcomes. Additionally, the ultimate goal for a manager is to win their matchup, so this must be a point of emphasis in the rating.
 
 ## Goals
+Find out the optimal balance of performance vs median and performance vs opponent and see which one is a better predictor of future outcomes. (α)
+Find out how much manager success is affected by having to draft a new team at the beginning of each season. (β)
+Find out if using FFMR to forcast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
 
 ## Data Collection:
-I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to pull data from sleeper's API. 
+I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrive data from sleeper's API. 
 
 ## Equations:
 Elo vs opponent:
@@ -18,20 +21,16 @@ Elo vs median:
 Manager Rating:
 ![](readme_images/mrating.PNG)
 
-The original equation that I started with equally weighs Elo for the performance vs opponent and performance vs median (above), so the formula was just the basic average of the two ratings(α=0.5). I decided to write the equation in a more general form with α being the determining factor for the weight. I believe the optimal α will be between 0.15 and 0.35, which would mean performance vs median is much more indicative of success than performance vs opponent.  
+In this equation, α is a number between 0 and 1 that is to weigh either Elo more heavily. If α=1, only performance vs median is taken into account and if α=0, then only performance vs opponent is taken into account. We will be able to determine the more important factor by finding the optimal α.
 
 Mean Regression Rate:
 ![](readme_images/mrr.PNG)
 
-In this equation, β is a value between 0 and 1 that regresses each rating to the mean at the beginning of each season. I got this idea from FiveThirtyEight’s NFL game predictions.
-
-https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/
-
-The NFL model has a mean regression rate of 1/3, but fantasy football is much more volatile because each team is completely wiped out each after each season. Thus, I believe the optimal β value will be somewhere between 0.5 and .75.
+In this equation, β is a value between 0 and 1 that regresses each rating to the mean at the beginning of each season. I got this idea from [FiveThirtyEight’s NFL game predictions](https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/). A β value of 1 would mean that a manager's success in one season provides no indication of success in other seasons. A β value of 0 would mean that managers are completely unaffected by having to draft a new team at the beginning of each season. To give you some context, 538's NFL model has a mean regression rate of 1/3.
 
 ## Optimization:
 
-I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes.
+After I saved all of the score and matchup data in csv files, I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes.
 
 ![](readme_images/alphabeta_table.PNG)
 
