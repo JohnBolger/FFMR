@@ -93,10 +93,11 @@ This is a calibration plot, it shows whether events happened as often as my forc
 
 ![](readme_images/Cal_plot.PNG)
 
+Plot for 2022:
+
 ![](readme_images/cal_plot2022.PNG)
 
-### Brier skill score
-How much more value does our forecast provide compared to an unskilled forcast.
+### Brier skill score: How much more value does our forecast provide compared to an unskilled forcast.
 
 I used a loop to create 1000 random lists consisiting of 1s and 0s to simulate randomly deciding each of the 401 outcomes and discovered that the Brier skill score for the league is .0634, which is close to [club soccer matches (.0668)](https://projects.fivethirtyeight.com/checking-our-work/club-soccer-matches/) and the [NHL games (.0687)](https://projects.fivethirtyeight.com/checking-our-work/nhl-games/) according to 538.
 
