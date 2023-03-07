@@ -1,6 +1,11 @@
 # Fantasy Football Manager Rating
 
 ## Project overview:
+- Proposed a forecasting model for my fantasy football league that combines two Elo ratings with a weighted average and regresses to the mean at the beginning of each season.
+- Used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrieve my league's data from sleeper's API
+- Optimized the model for a combination of percentage of games predicted total and percentage of games predicted in the 2022 season using scipy's curve fit function and analyzing scatterplots.
+- Forcasted each matchup using the previous weeks data and analyzed the model using a calibration plot and Brier skill score.
+
 
 ## Inspiration:
 I’ve noticed, in my years of competing in fantasy football, that the same handful of managers tend to be at the top of the league every year. Although luck certainly plays its part in the outcomes of matchups, in my observation, success in fantasy football is highly correlated with the skill of the manager. And the US agrees with this observation; fantasy football has been legal in the country due to skill component even when sports betting was overwhelmingly illegal. The equation I came up with attempts to mitigate one specific factor of luck in fantasy football by weighing both performance vs opponent and performance vs median score of the league participants in that week. Opponent performance is something a manager has no control over, so taking performance vs median into account is a crucial part of my equation. It would be difficult to argue that a manager who consistently scores below the median and takes advantage of an easy schedule is somehow better than a manager that consistently scores above the median and is burdened with tough matchups. As for the importance of performance vs opponent, I have another example. Take, for instance, a manager who knows they are projected to lose their matchup. This manager will likely start a more volatile option who has the potential to “boom” than a consistent option who doesn’t have a “boom” in their range of outcomes. Additionally, the ultimate goal for a manager is to win their matchup, so this must be a point of emphasis in the rating.
@@ -13,7 +18,7 @@ I’ve noticed, in my years of competing in fantasy football, that the same hand
 3. Find out if using FFMR to forecast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
 
 ## Data Collection:
-I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrieve  data from sleeper's API. 
+I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrieve data from sleeper's API. 
 
 ## Equations:
 Elo vs opponent:
