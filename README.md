@@ -8,7 +8,7 @@ I’ve noticed, in my years of competing in fantasy football, that the same hand
 
 2. Find out how much manager success is affected by having to draft a new team at the beginning of each season. (β)
 
-3. Find out if using FFMR to forcast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
+3. Find out if using FFMR to forecast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
 
 ## Data Collection:
 I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrive data from sleeper's API. 
