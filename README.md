@@ -108,12 +108,6 @@ I did the same thing for the 2022 season and got a .1552 Brier skill score, whic
 I was heavily inspired by FiveThirtyEight:
 https://fivethirtyeight.com/ 
 
-I used this website to quickly visualize binomial distributions:
+The use of sleeper wrapper made this project much easier:
+https://github.com/dtsong/sleeper-api-wrapper
 
-https://homepage.divms.uiowa.edu/~mbognar/applets/bin.html 
-
-I was inspired by the visualization of this article and plan to build a similar dash app sometime in the future:
-
-https://towardsdatascience.com/developing-a-generalized-elo-rating-system-for-multiplayer-games-b9b495e87802 
-
-https://poker-elo-dashboard.herokuapp.com/ 
