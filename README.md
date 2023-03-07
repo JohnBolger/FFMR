@@ -91,7 +91,7 @@ Now that I have my formula, I want to use it to forcast future events and test i
 
 This is a calibration plot, it shows whether events happened as often as my forcast predicted they would. The dotted red line shows what perfect forecasting would look like, the vertical red lines show 95% confidence intervals.
 
-![](readme_images/cal_plot.PNG)
+![](readme_images/Cal_plot.PNG)
 
 ![](readme_images/cal_plot2022.PNG)
 
