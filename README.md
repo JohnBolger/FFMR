@@ -64,7 +64,7 @@ However, I knew I that wanted to investigate the peak between Beta = .5 and Beta
 I came to the conclusion that the optimal β was between .11 and .12 and noticed that choosing either any value in that range would not affect accuracy significantly, so I chose .12.
 
 ## Optimization Results:
-The optimal value of α=.5438 shows a pretty healthy balance of median performance and opponent performance and only indicates a slight median bias. My league is a pretty competitive 10 team (most of the time) PPR league and I can't imagine this value changing much with different leagues with the same settings, but maybe in standard half-point PPR leagues.
+The optimal value of α=.5438 shows a pretty healthy balance of median performance and opponent performance and only indicates a slight median bias. My league is a pretty competitive 10 team (most of the time) PPR league and I can't imagine this value changing much with different leagues with the same settings, but maybe in standard leagues or leagues of different sizes.
 
 The optimal β being equal to .12 shows that manager suscess doesn't change doesn't change much from season to season; good managers make good decisions on a draft day and beyond and bad managers keep being bad (in my league). This seems obvious, but some people don't know about how much research goes into making good fantasy football decisions.
 
@@ -76,13 +76,26 @@ By Year:
 
 ![](readme_images/perc_by_year.PNG)
 
+The accuracy is being held back by 2019, the year in which we switched from 10 teams to 12 teams. After that season we went back to 10 teams, but the damage was done, my predictions were ruined. I can't wait to get more seasons in, so that I have enough data to just start from 2020. Nonetheless, the predictions seem to be getting better each year and I hope that trend continues.
+
 By Week:
 
 ![](readme_images/perc_by_week.PNG)
 
+There doesn't seem to be too much of a patern with the accuracy by week other than week 1 being the worst and the second half of the season being slightly more accurate, but both of those are to be expected.
  
-## Conclusion:
+## Forecasting:
+### Calibration plot
 
+Now that I have my formula, I want to use it to forcast future events and test it going back and testing it on prior events. I will be using the datapoints from previous weeks to forecast a win probability for each week; i.e. I will use data from week 1 to forecast probabilities for week 2, data from weeks 1 and 2 to forecast week 3, and so on. 
+
+This is a calibration plot, it shows whether events happened as often as my forcast predicted they would. The dotted red line shows what perfect forecasting would look like, the vertical red lines show 95% confidence intervals.
+
+![](readme_images/cal_plot.PNG)
+
+![](readme_images/cal_plot2022.PNG)
+
+### Brier skill score
 
 
 ## Future:
