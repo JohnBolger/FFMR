@@ -23,7 +23,7 @@ Elo vs median:
 Manager Rating:
 ![](readme_images/mrating.PNG)
 
-In this equation, α is a number between 0 and 1 that is to weigh either Elo more heavily. If α=1, only performance vs median is taken into account and if α=0, then only performance vs opponent is taken into account. We will be able to determine the more important factor by finding the optimal α.
+In this equation, α is a number between 0 and 1 that is used to weigh either Elo more heavily. If α=1, only performance vs median is taken into account and if α=0, then only performance vs opponent is taken into account. We will be able to determine the more important factor by finding the optimal α.
 
 Mean Regression Rate:
 ![](readme_images/mrr.PNG)
