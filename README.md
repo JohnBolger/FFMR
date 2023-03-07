@@ -47,22 +47,21 @@ This plot provided a clear range for the optimal parameters. Alpha should be som
 
 I then used scipy's curve fit function to find more precise values for the opimal Alpha and Beta.
 
-This worked really well for Alpha:
+This worked really well for Alpha and provided me with the optimal α of .5538, which is where the curve is at its maximum value:
 
 ![](readme_images/alpha_plot.png)
 
-Alpha = .5538
 
-Not so much for Beta:
+Not so much for Beta as I could not find a curve that was a good fit for the data:
 
 ![](readme_images/beta_plot.png)
 
-I couldn't find a curve that was a good fit for the data, but I knew I wanted to investigate the peak between Beta = .5 and Beta .15. So, I decided to run a loop with Alpha = .5538 and Beta in (.05,.15) incrementing by .01:
+However, I knew I that wanted to investigate the peak between Beta = .5 and Beta .15. So, I decided to run a loop with Alpha = .5538 and Beta in (.05,.15) incrementing by .01:
 
 ![](readme_images/beta_opt.PNG)
 ![](readme_images/beta_opt2.PNG)
 
-Hence, I chose Beta = .12
+I came to the conclusion that the optimal β was between .11 and .12 and noticed that choosing either any value in that range would not affect accuracy significantly, so I chose .12.
 
 ## Results:
 The percentage of correctly predicted games by the rating system:
