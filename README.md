@@ -47,7 +47,7 @@ This plot provided a clear range for the optimal parameters. Alpha should be som
 
 I then used scipy's curve fit function to find more precise values for the opimal Alpha and Beta.
 
-This worked really well for Alpha and provided me with the optimal α of .5538, which is where the curve is at its maximum value:
+This worked really well for Alpha and provided me with the optimal α of .5438, which is where the curve is at its maximum value:
 
 ![](readme_images/alpha_plot.png)
 
@@ -64,7 +64,11 @@ However, I knew I that wanted to investigate the peak between Beta = .5 and Beta
 I came to the conclusion that the optimal β was between .11 and .12 and noticed that choosing either any value in that range would not affect accuracy significantly, so I chose .12.
 
 ## Optimization Results:
+The optimal value of α=.5438 shows a pretty healthy balance of median performance and opponent performance and only indicates a slight median bias. My league is a pretty competitive 10 team (most of the time) PPR league and I can't imagine this value changing much with different leagues with the same settings, but maybe in standard half-point PPR leagues.
 
+The optimal β being equal to .12 shows that manager suscess doesn't change doesn't change much from season to season; good managers make good decisions on a draft day and beyond and bad managers keep being bad (in my league). This seems obvious, but some people don't know about how much research goes into making good fantasy football decisions.
+
+## Optimal Leagues Predictions
 The percentage of correctly predicted games:
 ![](readme_images/opt_pred_perc.PNG)
 
