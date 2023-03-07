@@ -64,7 +64,7 @@ However, I knew I that wanted to investigate the peak between Beta = .5 and Beta
 I came to the conclusion that the optimal β was between .11 and .12 and noticed that choosing either any value in that range would not affect accuracy significantly, so I chose .12.
 
 ## Results:
-The percentage of correctly predicted games by the rating system:
+The percentage of correctly predicted games:
 ![](readme_images/opt_pred_perc.PNG)
 
 By Year:
