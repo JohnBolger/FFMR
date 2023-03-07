@@ -52,7 +52,7 @@ This worked really well for Alpha and provided me with the optimal α of .5538, 
 ![](readme_images/alpha_plot.png)
 
 
-Not so much for Beta as I could not find a curve that was a good fit for the data:
+Unfornutely, it wasn't that simple for Beta as I could not find a curve that was a good fit for the data:
 
 ![](readme_images/beta_plot.png)
 
