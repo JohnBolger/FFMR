@@ -4,9 +4,11 @@
 I’ve noticed, in my years of competing in fantasy football, that the same handful of managers tend to be at the top of the league every year. Although luck certainly plays its part in the outcomes of matchups, in my observation, success in fantasy football is highly correlated with the skill of the manager. And the US agrees with this observation; fantasy football has been legal in the country due to skill component even when sports betting was overwhelmingly illegal. The equation I came up with attempts to mitigate one specific factor of luck in fantasy football by weighing both performance vs opponent and performance vs median score of the league participants in that week. Opponent performance is something a manager has no control over, so taking performance vs median into account is a crucial part of my equation. It would be difficult to argue that a manager who consistently scores below the median and takes advantage of an easy schedule is somehow better than a manager that consistently scores above the median and is burdened with tough matchups. As for the importance of performance vs opponent, I have another example. Take, for instance, a manager who knows they are projected to lose their matchup. This manager will likely start a more volatile option who has the potential to “boom” than a consistent option who doesn’t have a “boom” in their range of outcomes. Additionally, the ultimate goal for a manager is to win their matchup, so this must be a point of emphasis in the rating.
 
 ## Goals
-Find out the optimal balance of performance vs median and performance vs opponent and see which one is a better predictor of future outcomes. (α)
-Find out how much manager success is affected by having to draft a new team at the beginning of each season. (β)
-Find out if using FFMR to forcast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
+1. Find out the optimal balance of performance vs median and performance vs opponent and see which one is a better predictor of future outcomes. (α)
+
+2. Find out how much manager success is affected by having to draft a new team at the beginning of each season. (β)
+
+3. Find out if using FFMR to forcast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
 
 ## Data Collection:
 I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrive data from sleeper's API. 
