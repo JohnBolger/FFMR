@@ -84,7 +84,7 @@ By Week:
 
 There doesn't seem to be too much of a pattern with the accuracy by week other than week 1 being the worst and the second half of the season being slightly more accurate, but both of those are to be expected.
  
-## Forecasting:
+## [Forecasting](https://github.com/JohnBolger/FFMR/blob/main/Optimal%20FFMR%20Forcasting.ipynb):
 ### Calibration plot
 
 Now that I have my formula, I want to use it to forecast future events and test it going back and testing it on prior events. I will be using the datapoints from previous weeks to forecast a win probability for each week, i.e. I will use data from week 1 to forecast probabilities for week 2, data from weeks 1 and 2 to forecast week 3, and so on. 
