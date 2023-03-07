@@ -11,7 +11,7 @@ I’ve noticed, in my years of competing in fantasy football, that the same hand
 3. Find out if using FFMR to forecast outcomes is better than choosing outcomes at random (and by how much). (Brier skill score)
 
 ## Data Collection:
-I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrive data from sleeper's API. 
+I used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrieve  data from sleeper's API. 
 
 ## Equations:
 Elo vs opponent:
@@ -32,7 +32,7 @@ In this equation, β is a value between 0 and 1 that regresses each rating to th
 
 ## Optimization:
 
-After I saved all of the score and matchup data in csv files, I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes (the team with the higher rating won) and that the score column is simply Accuracy + 2022 Accuracy. I decided that I wanted to optimize for both the total league accuracy and the most recent season accuracy equally.
+After I saved all of the score and matchup data in csv files, I used a for loop to iterate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes (the team with the higher rating won) and that the score column is simply Accuracy + 2022 Accuracy. I decided that I wanted to optimize for both the total league accuracy and the most recent season accuracy equally.
 See [Accuracy and Optimization.ipynb](https://github.com/JohnBolger/FFMR/blob/main/Accuracy%20and%20Optimization.ipynb) for full code.
 
 ![](readme_images/alphabeta_table.PNG)
@@ -43,30 +43,30 @@ Here is a scatterplot showing the combinations of alpha and beta using color to 
 
 ![](readme_images/alphabeta_scatter1.png)
 
-This plot provided a clear range for the optimal parameters. Alpha should be somewhere in the range (0.4,0.6) and Beta should be mewhere in the range (0.1,0.2). Also this shows that changes in Beta impact score more than changes in Alpha.
+This plot provided a clear range for the optimal parameters: α should be somewhere in the range (0.4,0.6) and β should be mewhere in the range (0.1,0.2). Also this shows that changes in β impact score more than changes in α.
 
-I then used scipy's curve fit function to find more precise values for the opimal Alpha and Beta.
+I then used scipy's curve fit function to find more precise values for the optimal α and β.
 
 This worked really well for Alpha and provided me with the optimal α of .5438, which is where the curve is at its maximum value:
 
 ![](readme_images/alpha_plot.png)
 
 
-Unfornutely, it wasn't that simple for Beta as I could not find a curve that was a good fit for the data:
+Unfortunately, it wasn't that simple for Beta as I could not find a curve that was a good fit for the data:
 
 ![](readme_images/beta_plot.png)
 
-However, I knew I that wanted to investigate the peak between Beta = .5 and Beta .15. So, I decided to run a loop with Alpha = .5538 and Beta in (.05,.15) incrementing by .01:
+However, I knew I that wanted to investigate the peak between β = .5 and β .15. So, I decided to run a loop with Alpha = .5538 and Beta in (.05,.15) incrementing by .01:
 
 ![](readme_images/beta_opt.PNG)
 ![](readme_images/beta_opt2.PNG)
 
-I came to the conclusion that the optimal β was between .11 and .12 and noticed that choosing either any value in that range would not affect accuracy significantly, so I chose .12.
+I came to the conclusion that the optimal β was between .11 and .12 and noticed that choosing any value in that range would not affect accuracy significantly, so I chose .12.
 
 ## Optimization Results:
-The optimal value of α=.5438 shows a pretty healthy balance of median performance and opponent performance and only indicates a slight median bias. My league is a pretty competitive 10 team (most of the time) PPR league and I can't imagine this value changing much with different leagues with the same settings, but maybe in standard leagues or leagues of different sizes.
+The optimal value of α=.5438 shows a healthy balance of median performance and opponent performance and only indicates a slight median bias. My league is a pretty competitive 10 team (most of the time) PPR league and I can't imagine this value changing much with different leagues with the same settings, but maybe in standard leagues or leagues of different sizes.
 
-The optimal β being equal to .12 shows that manager suscess doesn't change doesn't change much from season to season; good managers make good decisions on a draft day and beyond and bad managers keep being bad (in my league). This seems obvious, but some people don't know about how much research goes into making good fantasy football decisions.
+The optimal β being equal to .12 shows that manager success doesn't change much from season to season; good managers make good decisions on a draft day and beyond and bad managers keep being bad (in my league). This seems obvious, but some people don't know about how much research goes into making good fantasy football decisions.
 
 ## Optimal Leagues Predictions
 The percentage of correctly predicted games:
@@ -82,14 +82,14 @@ By Week:
 
 ![](readme_images/perc_by_week.PNG)
 
-There doesn't seem to be too much of a patern with the accuracy by week other than week 1 being the worst and the second half of the season being slightly more accurate, but both of those are to be expected.
+There doesn't seem to be too much of a pattern with the accuracy by week other than week 1 being the worst and the second half of the season being slightly more accurate, but both of those are to be expected.
  
 ## Forecasting:
 ### Calibration plot
 
-Now that I have my formula, I want to use it to forcast future events and test it going back and testing it on prior events. I will be using the datapoints from previous weeks to forecast a win probability for each week; i.e. I will use data from week 1 to forecast probabilities for week 2, data from weeks 1 and 2 to forecast week 3, and so on. 
+Now that I have my formula, I want to use it to forecast future events and test it going back and testing it on prior events. I will be using the datapoints from previous weeks to forecast a win probability for each week, i.e. I will use data from week 1 to forecast probabilities for week 2, data from weeks 1 and 2 to forecast week 3, and so on. 
 
-This is a calibration plot, it shows whether events happened as often as my forcast predicted they would. The dotted red line shows what perfect forecasting would look like, the vertical red lines show 95% confidence intervals.
+This is a calibration plot, it shows whether events happened as often as my forecast predicted they would. The dotted red line shows what perfect forecasting would look like; the vertical red lines show 95% confidence intervals.
 
 ![](readme_images/Cal_plot.PNG)
 
@@ -97,11 +97,11 @@ Plot for 2022:
 
 ![](readme_images/cal_plot2022.PNG)
 
-### [Brier skill score](https://en.wikipedia.org/wiki/Brier_score#Brier_Skill_Score_(BSS)): (How much more value does our forecast provide compared to an unskilled forcast)
+### [Brier skill score](https://en.wikipedia.org/wiki/Brier_score#Brier_Skill_Score_(BSS)): (How much more value does our forecast provide compared to an unskilled forecast)
 
-I used a loop to create 1000 random lists consisiting of 1s and 0s to simulate randomly deciding each of the 401 outcomes and discovered that the Brier skill score for the league is .0634, which is close to [club soccer matches (.0668)](https://projects.fivethirtyeight.com/checking-our-work/club-soccer-matches/) and the [NHL games (.0687)](https://projects.fivethirtyeight.com/checking-our-work/nhl-games/) according to 538.
+I used a loop to create 1000 random lists consisting of 1s and 0s to simulate randomly deciding each of the 401 outcomes and discovered that the Brier skill score for the league is .0634, which is close to [club soccer matches (.0668)](https://projects.fivethirtyeight.com/checking-our-work/club-soccer-matches/) and the [NHL games (.0687)](https://projects.fivethirtyeight.com/checking-our-work/nhl-games/) according to 538.
 
-I did the same thing for the 2022 season and got a .1522 Brier skill score, which is better than the scores for every major team sport's games/matches, so I'm not sure what to make of this. It appears as though I need more data to make any resonable conclusion. Although, it wouldn't surprise me is the true Brier score is even than this.
+I did the same thing for the 2022 season and got a .1522 Brier skill score, which is better than the scores for every major team sport's games/matches, so I'm not sure what to make of this. It appears as though I need more data to make any reasonable conclusion. Although, it wouldn't surprise me is the true Brier score is even than this.
 
 ## Future:
 
