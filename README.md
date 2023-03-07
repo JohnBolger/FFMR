@@ -32,7 +32,8 @@ In this equation, β is a value between 0 and 1 that regresses each rating to th
 
 ## Optimization:
 
-After I saved all of the score and matchup data in csv files, I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes and that the score column is simply Accuracy + 2022 Accuracy.. See [Accuracy and Optimization.ipynb](https://github.com/JohnBolger/FFMR/blob/main/Accuracy%20and%20Optimization.ipynb) for full code.
+After I saved all of the score and matchup data in csv files, I used a for loop to interate through 441 different combinations of alphas and betas and decided I wanted to optimize for a combination of full league accuracy and 2022 accuracy. Note that accuracy is just the ratio of correctly predicted outcomes to total number of outcomes and that the score column is simply Accuracy + 2022 Accuracy. I decided that I wanted to optimize for both the total league accuracy and the most recent season accuracy equally.
+See [Accuracy and Optimization.ipynb](https://github.com/JohnBolger/FFMR/blob/main/Accuracy%20and%20Optimization.ipynb) for full code.
 
 ![](readme_images/alphabeta_table.PNG)
 
