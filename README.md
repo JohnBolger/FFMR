@@ -108,9 +108,7 @@ Plot for 2022:
 
 I used a loop to create 1000 random lists consisting of 1s and 0s to simulate randomly deciding each of the 401 outcomes and discovered that the Brier skill score for the league is .0634, which is close to [club soccer matches (.0668)](https://projects.fivethirtyeight.com/checking-our-work/club-soccer-matches/) and the [NHL games (.0687)](https://projects.fivethirtyeight.com/checking-our-work/nhl-games/) according to 538.
 
-I did the same thing for the 2022 season and got a .1522 Brier skill score, which is better than the scores for every major team sport's games/matches, so I'm not sure what to make of this. It appears as though I need more data to make any reasonable conclusion. Although, it wouldn't surprise me is the true Brier score is even than this.
-
-## Future:
+I did the same thing for the 2022 season and got a .1522 Brier skill score, which is better than the scores for every major team sport's games/matches, so I'm not sure what to make of this. It appears as though I need more data to make any reasonable conclusion. Although, it wouldn't surprise me is the true Brier score is even larger than this.
 
 
 ## Thanks to:
