@@ -5,7 +5,7 @@
 - Used the [sleeper wrapper package](https://github.com/dtsong/sleeper-api-wrapper) to retrieve my league's data from sleeper's API
 - Optimized the model for a combination of percentage of games predicted total and percentage of games predicted in the 2022 season using Scipy's curve fit function and analyzing scatterplots.
 - Forecasted each matchup using the previous weeks data and analyzed the model using a calibration plot and Brier skill score.
-- Imported data into a SQL database and used Azure Data Studio create a SQL notebook in which the data was queried to find interesting facts and answer interesting questions about the data. Some questions were "Which team gained the most ffmr in a single season?", "Which teams had the tough strength of schedule?", and "Which matchups had the highest combined ffmr?"
+- Imported data into a SQL database and used Azure Data Studio create a SQL notebook in which the data was queried to find interesting facts and answer interesting questions about the data. Some questions were "Which team gained the most ffmr in a single season?", "Which teams had the tough strength of schedule?", and "Which matchups had the highest combined ffmr?".
 
 ![](readme_images/hardest_seasons.PNG)
 
